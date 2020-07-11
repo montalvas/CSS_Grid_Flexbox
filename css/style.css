@@ -6,6 +6,10 @@
 	text-decoration: none;
 }
 
+body{
+	margin-bottom: 100px;
+}
+
 header{
 	width: 100%;
 	padding: 20px;
@@ -50,14 +54,51 @@ img{
 	max-width: 100%;
 }
 
-/* CSS FLEXBOX 1 */
+/* CSS GRID 1 */
 
-.flex{
-	display: flex;
-	padding: 20px;
+.grid{
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 10px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr; /*Quantas colunas e seu tamanho*/
+	/*grid-template-columns: repeat(3, 1fr); também funciona*/
+	gap: 20px; /*O espaçamento entre os itens, funciona como margin*/
 }
 
-.flex p{
+.grid > div:nth-child(n + 4){
+	display: grid;
+	grid-template-columns: 1fr 1fr; /*Dividi a imagem e a legenda em 2 colunas*/
+	gap: 10px;
+	align-items: center;
+}
+
+.grid > div.anuncio{
+	grid-column: 1; /*Quero que o anuncio esteja na coluna 1*/
+	grid-row: 2 / 5; /*Quero que o anuncio esteja entre as linhas 2 e 5 (a legenda conta como linha)*/
+	display: block;
 	text-align: center;
-	font-style: italic;
+}
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 700px){
+
+	.grid{
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.grid > div:nth-child(n + 4){
+		display: block; /*O display block tira todas as propriedades do display flex*/
+	}
+
+	.grid > div{
+		order: 2;
+	}
+
+	.grid > div.anuncio{
+		grid-column: auto; /* Reseta a posição no grid */
+		grid-row: auto;
+		order: 1; /*Deixei o anuncio como destaque*/
+	}
 }

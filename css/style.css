@@ -1,0 +1,63 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Hind Madurai', sans-serif;
+	text-decoration: none;
+}
+
+header{
+	width: 100%;
+	padding: 20px;
+	background-color: #02020A;
+	display: flex;
+	justify-content: space-between; /*Aqui define como será distribuído
+	Space-between: Cria um espaço entre eles
+	Space-around: Cria espaço ao redor deles*/
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.logo a{
+	font-family: 'Poiret One', cursive;
+	font-size: 60px;
+	color: #FF7F11;
+}
+
+.menu{
+	list-style: none;
+	display: flex;
+}
+
+.menu li{
+	margin-left: 10px;
+}
+
+.menu a{
+	font-size: 20px;
+	color: #E2E8CE;
+	display: block;
+	padding: 10px;
+}
+
+h1{
+	text-align: center;
+	margin: 100px 0 50px 0;
+}
+
+img{
+	display: block;
+	max-width: 100%;
+}
+
+/* CSS FLEXBOX 1 */
+
+.flex{
+	display: flex;
+	padding: 20px;
+}
+
+.flex p{
+	text-align: center;
+	font-style: italic;
+}
